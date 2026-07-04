@@ -1,0 +1,12 @@
+bha:
+  skill_version: "BHA-S Engineering Skill V1.0"
+  level: "L2"
+  clusters:
+    audit_cluster:
+      cells: [project_scanner, code_auditor, report_generator]
+    ai_cluster:
+      cells: [llm_gateway]
+  rules:
+    BHA-S-R001: error
+    BHA-S-R002: error
+    BHA-S-R003: warning
