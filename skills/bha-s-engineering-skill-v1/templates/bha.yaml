@@ -1,0 +1,50 @@
+bha:
+  skill_version: "BHA-S Engineering Skill V1.0"
+  level: "L2"   # L1 | L2 | L3 | L4
+  safety_level: "S0"  # S0 | S1 | S2 | S3
+
+  clusters:
+    default_cluster:
+      cells: []
+
+  cells:
+    # example_cell:
+    #   cluster: default_cluster
+    #   owned_data:
+    #     - example_*
+    #   public_facades:
+    #     - cells.example_cell.application.services.example_service
+
+  shared:
+    allowed_paths:
+      - shared/foundation
+      - shared/contracts
+      - shared/observability
+      - shared/testing
+    forbidden_business_terms:
+      - order
+      - payment
+      - device
+      - audit_score
+
+  database:
+    table_owners:
+      # order_*: order_core
+      # payment_*: payment
+    forbid_cross_cell_source_join: true
+
+  rules:
+    BHA-S-R001: error
+    BHA-S-R002: error
+    BHA-S-R003: warning
+    BHA-S-R004: error
+    BHA-S-R005: warning
+    BHA-S-R006: error
+    BHA-S-R007: warning
+
+  ignores:
+    # - rule: BHA-S-R003
+    #   path: "cells/report_center/infrastructure/query.sql"
+    #   reason: "temporary reporting migration"
+    #   issue: "ADR-012"
+    #   expire_date: "2026-09-01"
