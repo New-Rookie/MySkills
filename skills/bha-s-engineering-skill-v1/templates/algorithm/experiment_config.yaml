@@ -1,0 +1,52 @@
+experiment:
+  name: "exp_YYYYMMDD_name"
+  run_id: "auto-generated-uuid"
+  parent_run_id: null
+  seed: 42
+  reproducibility_level: "strict" # strict | normal | exploratory
+
+code:
+  git_commit: "auto"
+  branch: "auto"
+  algorithm_version: "v0.1.0"
+  config_version: "v1"
+
+data:
+  dataset_name: "dataset_name"
+  dataset_version: "v1.0"
+  dataset_hash: "sha256:"
+  split_version: "split_v1"
+  data_split_ratio: [0.8, 0.1, 0.1]
+  preprocess_version: "preprocess_v1"
+
+model:
+  architecture: "model_name"
+  checkpoint_from: null
+  hyperparameters:
+    lr: 0.001
+    batch_size: 32
+    epochs: 50
+
+training:
+  framework: "pytorch"
+  framework_version: ""
+  deterministic: true
+  mixed_precision: false
+  distributed: false
+
+environment:
+  python_version: "3.10"
+  cuda_version: ""
+  gpu_type: ""
+  dependency_lock: "requirements.lock"
+
+evaluation:
+  metrics:
+    - name: "accuracy"
+      definition_version: "metric_v1"
+
+output:
+  metric_tracking: "mlflow"
+  artifact_path: "artifacts/experiments/"
+  model_registry: "mlflow"
+  report_path: "reports/"
